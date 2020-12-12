@@ -1,0 +1,48 @@
+<div class="view" style="margin-top:2rem">
+    <div class="container">
+        <header>
+            <h3><span class="glyphicon glyphicon-lock"></span> Login</h3>
+        </header>
+        <br />
+        <form [formGroup]="loginForm" (ngSubmit)="submit()" class="login-form" novalidate style="margin-right:10rem;">
+            <div class="login">
+                <div class="row">
+                    <div class="col-md-2">
+                        Username:
+                    </div>
+                    <div class="col-md-10">
+                        <input type="username" name="username" class="form-control" formControlName="username"/>
+                        <div class="alert alert-danger" data-cy="username-error" [hidden]="loginForm.controls.username.untouched || loginForm.controls.username.valid">
+                            A valid username is required
+                        </div>
+                    </div>
+                </div>
+                <br />
+                <div class="row">
+                    <div class="col-md-2">
+                        Password:
+                    </div>
+                    <div class="col-md-10">
+                        <input type="password" name="password" class="form-control" formControlName="password" />
+                        <div class="alert alert-danger" data-cy="password-error" [hidden]="loginForm.controls.password.untouched || loginForm.controls.password.valid">
+                            Password is required
+                        </div>
+                    </div>
+                </div>
+                <br />
+                <div class="row">
+                    <div class="col-md-12">
+                        <button type="submit" class="btn btn-success" [disabled]="!loginForm.valid">Login</button>
+                    </div>
+                </div>
+                <br />
+                <!-- <div class="statusRow">
+                    <br />
+                    <div class="label label-important" *ngIf="errorMessage">
+                        <span class="glyphicon glyphicon-thumbs-down icon-white"></span>&nbsp;&nbsp;Error: {{ errorMessage }}
+                    </div>
+                </div> -->
+            </div>
+        </form>
+    </div>
+</div>

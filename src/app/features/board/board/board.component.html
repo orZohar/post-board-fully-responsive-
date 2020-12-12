@@ -1,0 +1,15 @@
+
+<h1 style="text-align: center;margin-top: 2rem;"> Welcome to post board</h1>
+
+<div class="posts_container">
+    <div class="posts_container--item" (click)="createPost()">
+        <post>
+            <content-post-creator></content-post-creator>
+        </post>
+    </div>
+    <div class="posts_container--item" *ngFor="let post of postList; let i = index; trackBy: trackByPostsFunction" (click)="editPost(post, i)">
+        <post>
+            <content-post [postData]="post"></content-post>
+        </post>
+    </div>
+</div>

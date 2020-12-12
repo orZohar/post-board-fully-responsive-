@@ -1,0 +1,28 @@
+.posts_container{
+    display: flex;
+    flex-flow: row wrap; // make flexbox able to go to next rows.
+    position: relative;
+    width: 85%;   
+    text-align:center;
+    margin: auto;
+
+    &--item {
+        flex: 1 1 21%; /* <-- adjusting for margin */
+        max-width:21%;
+        font-size:2rem; 
+        margin:1.5rem;
+        padding: 1rem 0.5rem;
+        cursor: pointer;
+        position: relative;
+      
+        @media screen and (max-width: 1260px) {
+            flex-basis:45%; // needs to higher than 43%+ (double 21% + padding and stuff) other wise the item will strech and we want to limit the item when there is one  
+            max-width:42.5%; // my max width can be double and 2 items will take 85%
+        }
+
+        @media screen and (max-width: 700px) {
+            
+           max-width:85%; // tell item to take all the space
+        }
+    }
+}

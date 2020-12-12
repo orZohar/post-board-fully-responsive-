@@ -1,0 +1,39 @@
+
+.header{
+    font-size:1.4rem;
+    height: 4.2rem; 
+    background-color: #323232; 
+    display:flex;
+    flex-direction: row;
+    justify-content: flex-end; // all childs to the left
+    align-items: center;
+
+&--item {
+    padding: 0 1rem;
+    cursor: pointer;
+    height:100%;
+    color: white;
+    display: flex;
+    align-items: center; 
+}
+
+// push elemet to the end (will stop at the divider)
+.divider {
+    display: flex;
+    flex: 1; // flex grow
+}
+
+& > *:hover {
+    color: orange;
+}
+}
+.search-icon{
+    color:black;
+    position: absolute;
+    right:14.5rem;
+    top:1.1rem;
+}
+
+.margin-input{
+    margin: 0 1rem 0 1rem;
+}

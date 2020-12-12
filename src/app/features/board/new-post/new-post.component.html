@@ -1,0 +1,23 @@
+<form (ngSubmit)="submit()" [formGroup]="postForm" class="customer-form" novalidate>
+
+    <div class="form-group">
+        <label>Author Name</label>
+        <input type="text" class="form-control" name="authorName" formControlName="authorName" required>
+        <div class="alert alert-danger"
+            [hidden]="postForm.controls.authorName.pristine || postForm.controls.authorName.valid">Author name is required and limited to 16 letters</div>
+    </div>
+    <div class="form-group">
+        <label>Post Content</label>
+        <textarea type="text" class="form-control" name="content" formControlName="content" required></textarea>
+        <div class="alert alert-danger"
+            [hidden]="postForm.controls.content.pristine || postForm.controls.content.valid">Content is required</div>
+    </div>
+    <div class="alert alert-danger" *ngIf="errorMessage != null">{{ errorMessage }}</div>
+    
+    <div class="col-md-12">
+        <button *ngIf="!isEdit" type="submit" class="btn btn-success create-post-btn" [disabled]="!postForm.valid">Post</button>
+
+        <button *ngIf="isEdit" type="submit" class="btn btn-success update-post-btn" [disabled]="!postForm.valid">Update</button>
+        <button *ngIf="isEdit" type="button" class="btn btn-danger delete-post-btn" (click)="deletePost()">Delete</button>
+    </div>
+</form>
