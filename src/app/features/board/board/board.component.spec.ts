@@ -1,4 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { DialogService } from 'primeng/dynamicdialog';
 
 import { BoardComponent } from './board.component';
 
@@ -8,7 +9,8 @@ describe('BoardComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ BoardComponent ]
+      declarations: [ BoardComponent ],
+      providers: [DialogService]
     })
     .compileComponents();
   }));
